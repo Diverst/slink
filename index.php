@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +20,19 @@
             <div id="nav_logo"><img src="./img/slink2.png" alt=""></div>
             <span id="nav_">Features</span>
             <span id="nav_pricing_">Pricing</span>
-            <span id="nav_"><a href="signup.html">Sign up</a></span>
-            <span id="nav_"><a href="login.html">Log in</a></span>
+            <?php
+              if(!isset($_SESSION['UserId'])){
+              ?>
+              <span id="nav_"><a href="signup.html">Sign up</a></span>
+              <span id="nav_"><a href="login.html">Log in</a></span>
+              <?php 
+              }
+              else{
+                ?>
+                <span id="nav_"><a href="logout.php">Log out</a></span>
+                <?php
+              }
+            ?>
         </header>
         
         <div class="container_start"> 

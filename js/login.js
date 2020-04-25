@@ -11,6 +11,9 @@ function login(){
         },
         success:function(data){
             console.log(data);
+            if(data=="Correct"){
+                window.location.href="index.php";
+            }
         },
         error:function(err){
             console.log(err);
